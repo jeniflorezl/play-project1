@@ -1,0 +1,20 @@
+@import models.Producto
+@(productFormEdit : Form[Producto])
+@import helper._
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit product</title>
+    </head>
+    <body>
+        <h1>Edit product</h1>
+        @helper.form(action = controllers.routes.ProductoController.update()){
+            @helper.inputText(productFormEdit("id"))
+            @helper.inputText(productFormEdit("nombre"))
+            @helper.inputText(productFormEdit("tipo"))
+            @helper.inputText(productFormEdit("costo"))
+            <input type="submit" value="Edit product">
+            }
+    </body>
+</html>

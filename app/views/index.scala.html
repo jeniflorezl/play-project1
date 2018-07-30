@@ -1,0 +1,21 @@
+@(productos : List[Producto])
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>All products</title>
+    </head>
+    <body>
+        <h1>All products</h1>
+        <ul>
+            @for(producto <- productos){
+                <ul>
+                    <p>@producto.getId</p>
+                    <a href="@controllers.routes.ProductoController.show(producto.getId)">@producto.getNombre</a>
+                    <p>@producto.getTipo</p>
+                    <p>@producto.getCosto</p>
+                </ul>
+            }
+        </ul>
+    </body>
+</html>
